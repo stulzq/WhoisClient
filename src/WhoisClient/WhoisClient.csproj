@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <Authors>Zhiqiang Li</Authors>
-    <Description>Domain whois lookup library.</Description>
+    <Description>A simple domain whois lookup library.</Description>
   </PropertyGroup>
 
 </Project>

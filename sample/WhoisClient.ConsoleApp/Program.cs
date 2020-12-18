@@ -15,8 +15,8 @@ namespace WhoisClient.ConsoleApp
                 var input = Console.ReadLine();
                 try
                 {
-                    var server = await client.LookupAsync(input!);
-                    Console.WriteLine(server);
+                    var whoisInfo = await client.LookupAsync(input!);
+                    Console.WriteLine(whoisInfo);
                 }
                 catch (Exception e)
                 {
