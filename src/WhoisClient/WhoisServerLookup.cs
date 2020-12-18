@@ -23,6 +23,17 @@ namespace WhoisClient
 
         public async Task<string> RequestAsync(string domain, bool useCache = true)
         {
+            var task = ExecuteAsync(domain, useCache);
+            if (task == await Task.WhenAny(task, Task.Delay(TimeSpan.FromSeconds(WhoisClientOptions.WhoisServerLookupTimeout))))
+            {
+                return await task;
+            }
+
+            throw new TimeoutException();
+        }
+
+        private async Task<string> ExecuteAsync(string domain, bool useCache = true)
+        {
             var tld = GetTld(domain).ToUpper();
             if (useCache && _tldCache.ContainsKey(tld))
             {

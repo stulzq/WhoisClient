@@ -18,6 +18,18 @@ namespace WhoisClient
 
         public async Task<string> LookupAsync(string domain)
         {
+            var task = ExecuteAsync(domain);
+            if (task == await Task.WhenAny(task, Task.Delay(TimeSpan.FromSeconds(WhoisClientOptions.DomainLookupTimeout))))
+            {
+                return await task;
+            }
+
+            throw new TimeoutException();
+
+        }
+
+        public async Task<string> ExecuteAsync(string domain)
+        {
             if (!ValidateDomain(domain))
             {
                 throw new ArgumentException("The domain is incorrect, for example: google.com.");
