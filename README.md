@@ -1,5 +1,7 @@
 # WhoisClient
 
+[![Latest version](https://img.shields.io/nuget/v/WhoisClient.svg)](https://www.nuget.org/packages/WhoisClient/) 
+
 A simple domain whois lookup library.
 
 ## Usage
