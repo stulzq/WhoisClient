@@ -6,6 +6,17 @@
     <LangVersion>latest</LangVersion>
     <Authors>Zhiqiang Li</Authors>
     <Description>A simple domain whois lookup library.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/stulzq/WhoisClient</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/stulzq/WhoisClient.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
