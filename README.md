@@ -6,6 +6,12 @@ A simple domain whois lookup library.
 
 ## Usage
 
+Install from nuget:
+
+````shell
+dotnet add package WhoisClient
+````
+
 ````csharp
 var client = new WhoisClient();
 var whoisInfo = await client.LookupAsync("google.com");
